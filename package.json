@@ -1,0 +1,25 @@
+{
+  "name": "react-wonderpush",
+  "version": "1.0.0",
+  "description": "React based implementation for WonderPush Web SDK − Advanced push notification service for iOS and Android applications and Websites. High volume and fast delivery. Start for free.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wonderpush/react-wonderpush.git"
+  },
+  "keywords": [
+    "wonderpush",
+    "react",
+    "wrapper",
+    "notifications"
+  ],
+  "author": "Boubacar Drame, Lenoir Jérémie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wonderpush/react-wonderpush/issues"
+  },
+  "homepage": "https://github.com/wonderpush/react-wonderpush#readme"
+}

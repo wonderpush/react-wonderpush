@@ -2,12 +2,17 @@ import React, { Component } from 'react';
 import { setTimeout } from 'timers';
 
 export default class ReactWP {
+
     constructor(tagElement) {
-        console.log('hello');
-      this.logger = window.console;
+
+      this.logger = {
+        log: function() {},
+        warn: function() {},
+        error: function() {}
+      };
+
       this.instance = null;
       this.addScriptTag('wonderpush-jssdk-loader', 'https://cdn.by.wonderpush.com/sdk/1.1/wonderpush-loader.min.js', tagElement);
-      
     };
 
     static getInstance(tagElement) {
@@ -32,7 +37,6 @@ export default class ReactWP {
         if(!tagElement || typeof tagElement !== 'string' || tagElement.toLowerCase() === 'head'
             || typeof window.document.getElementsByTagName(tagElement.toLowerCase())[0] === 'undefined') {
 
-            this.logger.warn('The script will be placed in the head by default.');
             return window.document.getElementsByTagName('head')[0].appendChild(wonderpushContainer);
         }
         window.document.getElementsByTagName(tagElement.toLowerCase())[0].appendChild(wonderpushContainer);
@@ -47,7 +51,7 @@ export default class ReactWP {
      */
 
     init(webKey, optInoptions){
-        if(!window.Wonderpush) {
+        if(!window.WonderPush) {
             return setTimeout(() => {
                 this.init(webKey, optInoptions);
             }, 1000);
@@ -56,6 +60,10 @@ export default class ReactWP {
             webKey: webKey,
             optInOptions: optInoptions
         });
+
+        this.logger.log('WONDERPUSH SDK INITIALIZED');
+        this.logger.log('WEBKEY', webKey);
+        this.logger.log('OPT IN OPTIONS', optInoptions);
     }
 
     /**

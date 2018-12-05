@@ -21,7 +21,7 @@ wrapper.init("a6a00ccf60ffee04cb201cead4304fc4db8fa8e0a2823a77466e8c8ebeed4e25",
 class App extends Component {
   constructor(){
     super();
-    console.log('ReactWP', wrapper);
+    console.log('APP REACT INITIALIZED');
   }
   render() {
     return (

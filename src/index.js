@@ -21,7 +21,7 @@ export default class ReactWP {
      * The script URI correspond to the wonderpush init
      * @param {string} id tof the application
      * @param {key} wonderpush key
-     * @param {string} node the node on witch the script will be placed, it can either be head or body
+     * @param {string} tagElement the tagElement on witch the script will be placed, it can either be head or body
      */
     addScriptTag(id, uri, tagElement){
         let wonderpushContainer = document.createElement('script');

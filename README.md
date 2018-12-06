@@ -27,6 +27,7 @@ WonderPush.init({
 });
 ```
 ### 3- In your components
+This example shows how to create a link to subscribe to WonderPush notifications. The link only appears for users that haven't subscribed already, and disappears once subscription is complete.
 ```javascript
 import WonderPush from 'react-wonderpush';
 
@@ -36,6 +37,7 @@ class NotificationSignupComponent extends Component {
       wonderPushReady: false,
       userIsSignedUpWithWonderPush: false,
     };
+    // Call WonderPush to find out if the user is subscribed.
     WonderPush.ready((WonderPushSDK) => {
       this.setState({
         userIsSignedUpWithWonderPush: WonderPushSDK.getNotificationEnabled(),
@@ -45,11 +47,15 @@ class NotificationSignupComponent extends Component {
   }
   render() {
     const { wonderPushReady, userIsSignedUpWithWonderPush } = this.state;
+    // Do not display anything when user is already subscribed or while we're waiting to find out
     if (!wonderPushReady || userIsSignedUpWithWonderPush) return null;
+    // Handle clicks
     const onClick = (event) => {
       if (event) event.preventDefault();
+      // Subscribe user to push notifications
       WonderPush.ready((WonderPushSDK) => {
         WonderPushSDK.setNotificationEnabled(true, event).then(() => {
+          // Update our state once the subscription is successful
           this.setState({ userIsSignedUpWithWonderPush: true })
         });
       });

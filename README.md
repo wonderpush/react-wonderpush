@@ -18,28 +18,48 @@ yarn add react-wonderpush
 npm i react-wonderpush
 ```
 
-Or alternatively, grab the dist/index.es5.min.js and include it in your project
-
-In your application, declare the react-tag-commander module dependency.
-
-```html
-<script src="nodes_components/react-wonderpush/dist/index.es5.min.js"></script>
-```
-or if you are using es6, import it like so
-```javascript
-import wp from 'react-wonderpush';
-```
-
 ### 2- In your application
 
 ```javascript
-const wrapper = wp.getInstance();
+import WonderPush from 'react-wonderpush';
+WonderPush.init({
+  webKey: 'YOUR-WEBKEY-HERE',
+});
+```
+### 3- In your components
+```javascript
+import WonderPush from 'react-wonderpush';
+
+class NotificationSignupComponent extends Component {
+  constructor(props) {
+    this.state = {
+      wonderPushReady: false,
+      userIsSignedUpWithWonderPush: false,
+    };
+    WonderPush.ready((WonderPushSDK) => {
+      this.setState({
+        userIsSignedUpWithWonderPush: WonderPushSDK.getNotificationEnabled(),
+        wonderPushReady: true,
+      });
+    });
+  }
+  render() {
+    const { wonderPushReady, userIsSignedUpWithWonderPush } = this.state;
+    if (!wonderPushReady || userIsSignedUpWithWonderPush) return null;
+    const onClick = (event) => {
+      if (event) event.preventDefault();
+      WonderPush.ready((WonderPushSDK) => {
+        WonderPushSDK.setNotificationEnabled(true, event).then(() => {
+          this.setState({ userIsSignedUpWithWonderPush: true })
+        });
+      });
+    };
+    return <a onClick={onClick} href="#">Subscribe to push notifications</a>;
+  }
+}
 ```
 
 
-
-
-### In React component
 
 
 ## Sample app

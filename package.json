@@ -2,7 +2,7 @@
   "name": "react-wonderpush",
   "version": "1.0.0",
   "description": "React based implementation for WonderPush Web SDK − Advanced push notification service for iOS and Android applications and Websites. High volume and fast delivery. Start for free.",
-  "main": "./src/index.js",
+  "main": "./dist/index.es5.min.js",
   "scripts": {
     "build": "gulp default",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -28,6 +28,7 @@
     "@babel/preset-env": "^7.2.0",
     "@babel/preset-es2015": "^7.0.0-beta.53",
     "@babel/preset-react": "^7.0.0",
+    "gulp-resolve-dependencies": "^2.2.0",
     "gulp": "^4.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",

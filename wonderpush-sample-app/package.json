@@ -113,5 +113,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "gulp-resolve-dependencies": "^2.2.0"
   }
 }

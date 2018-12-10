@@ -2,9 +2,9 @@
   "name": "react-wonderpush",
   "version": "1.0.0",
   "description": "React based implementation for WonderPush Web SDK − Advanced push notification service for iOS and Android applications and Websites. High volume and fast delivery. Start for free.",
-  "main": "./src/index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "build": "gulp default",
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,18 +25,16 @@
   "homepage": "https://github.com/wonderpush/react-wonderpush#readme",
   "devDependencies": {
     "@babel/core": "^7.2.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
+    "@babel/plugin-transform-react-jsx": "^7.2.0",
     "@babel/preset-env": "^7.2.0",
     "@babel/preset-es2015": "^7.0.0-beta.53",
     "@babel/preset-react": "^7.0.0",
-    "gulp": "^4.0.0",
-    "gulp-babel": "^8.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-minify": "^3.1.0",
-    "gulp-resolve-dependencies": "^2.2.0"
+    "babel-loader": "^8.0.4",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2"
   },
   "dependencies": {
-    "gulp-concat-js": "^0.1.0",
-    "gulp-uglify": "^3.0.1",
     "react": "^16.6.3"
   }
 }

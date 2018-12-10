@@ -4,20 +4,21 @@ import SwitchButton from './components/SwitchButton';
 import './App.css';
 import WonderPush from 'react-wonderpush';
 
+console.log('WONDERPUSH', WonderPush);
 
-WonderPush.init({
+/*WonderPush.init({
   webKey: "a6a00ccf60ffee04cb201cead4304fc4db8fa8e0a2823a77466e8c8ebeed4e25",
   applicationName:        'React WonderPush Demo',
   notificationDefaultUrl: 'https://www.wonderpush.com/demo/',
   notificationIcon:       '../img/image.png'
-});
+});*/
 class App extends Component {
   constructor(){
     super();
     console.log('APP REACT INITIALIZED' );
   }
   componentDidMount(){
-    WonderPush.ready(function(WonderPushSDK) {
+    /*WonderPush.ready(function(WonderPushSDK) {
       WonderPushSDK.Notification.setOptInOptions({
         modalBoxMessage: "We will send you personalized notifications.<br/>You can always unsubscribe at any time.",
         modalBoxButton: "Got it!",
@@ -34,7 +35,7 @@ class App extends Component {
           //   using a non intrusive information message
           WonderPushSDK.setNotificationEnabled(true);
       }
-    });
+    });*/
   }
   render() {
     return (

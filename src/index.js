@@ -4,4 +4,3 @@ import WonderPushComponent from './WonderPushComponent.js';
 
 export default WonderPush;
 export {WonderPushComponent, withWonderPush};
-

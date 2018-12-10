@@ -16,13 +16,13 @@ gulp.task('build-es5', function() {
         .pipe(babel({
             presets: ['@babel/env', '@babel/react']
         }))
-        .pipe(minify({
+        /*.pipe(minify({
         ext:{
             min:'.min.js'
         },
-        exclude: ['tasks'],
-        noSource: true
-    }))
+            exclude: ['tasks'],
+            noSource: true
+        }))*/
     .pipe(concat('index.es5.min.js'))
     .pipe(gulp.dest('dist'));
 });

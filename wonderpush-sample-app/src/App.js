@@ -3,6 +3,8 @@ import WPEventList from './components/WPEventList';
 import SwitchButton from './components/SwitchButton';
 import './App.css';
 import WonderPush from 'react-wonderpush';
+import withWonderPush from './withWonderPush';
+
 
 console.log('WONDERPUSH', WonderPush);
 
@@ -48,4 +50,5 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withWonderPush(App)
+

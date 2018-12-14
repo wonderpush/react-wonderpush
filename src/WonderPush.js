@@ -3,4 +3,4 @@ setTimeout(function(j,k){if(!d.getElementById(i)){k=d.getElementsByTagName(s)[0]
 j.src="https://cdn.by.wonderpush.com/sdk/1.1/wonderpush-loader.min.js";k.parentNode.insertBefore(j,k);}},0);
 }(window,document,"script","wonderpush-jssdk-loader","WonderPush"));
 
-export default window.WonderPush;
+export default WonderPush;

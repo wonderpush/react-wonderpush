@@ -2,11 +2,8 @@ import React, { Component } from 'react';
 import WPEventList from './components/WPEventList';
 import SwitchButton from './components/SwitchButton';
 import './App.css';
-import WonderPush from 'react-wonderpush';
-import withWonderPush from './withWonderPush';
+import {WonderPush, withWonderPush} from 'react-wonderpush';
 
-
-console.log('WONDERPUSH', WonderPush);
 
 /*WonderPush.init({
   webKey: "a6a00ccf60ffee04cb201cead4304fc4db8fa8e0a2823a77466e8c8ebeed4e25",
@@ -17,7 +14,6 @@ console.log('WONDERPUSH', WonderPush);
 class App extends Component {
   constructor(){
     super();
-    console.log('APP REACT INITIALIZED' );
   }
   componentDidMount(){
     /*WonderPush.ready(function(WonderPushSDK) {
@@ -41,14 +37,20 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
-      <h1>Connecting to wonderpush</h1>
-      <SwitchButton/>
-      <WPEventList/>
-      </div>
+        <WonderPush
+          webKey="a6a00ccf60ffee04cb201cead4304fc4db8fa8e0a2823a77466e8c8ebeed4e25"
+          applicationName="React WonderPush Demo"
+          notificationDefaultUrl="https://www.wonderpush.com/demo/"
+          notificationIcon="../img/image.png"
+        >
+          <div className="App">
+            <h1>Connecting to wonderpush</h1>
+            <SwitchButton/>
+            <WPEventList/>
+          </div>
+        </WonderPush>
     );
   }
 }
 
 export default withWonderPush(App)
-

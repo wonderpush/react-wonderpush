@@ -3,4 +3,5 @@ import withWonderPush from './withWonderPush.js';
 import WonderPushComponent from './WonderPushComponent.js';
 
 export default WonderPush;
-export {WonderPushComponent, withWonderPush};
+
+export {WonderPushComponent as WonderPush, withWonderPush};

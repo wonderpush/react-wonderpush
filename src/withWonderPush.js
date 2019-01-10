@@ -3,16 +3,27 @@ import WonderPush from './WonderPush';
 
 export default function withWonderPush (OriginalComponent) {
   class WonderpushHOC extends Component {
-    constructor(){
-      this.state = { wp }
+    constructor(props){
+      super(props)
+      this.state = { 
+        wp: null,
+        ready: false
+      }
     }
 
-    componentWillMount(){
-      WonderPush.ready( wp => this.setState(wp))
+    componentDidMount(){
+      WonderPush.ready( wp => {
+        this.setState({
+          wp,
+          ready: true
+        })
+      })
     }
 
     render(){
-      return <OriginalComponent wp={this.state.wp} {...this.props}/>
+      return this.state.ready ? 
+        <OriginalComponent wp={this.state.wp} {...this.props}/> : 
+        null
     }
   }
   return WonderpushHOC;

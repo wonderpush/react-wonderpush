@@ -62,7 +62,7 @@ p{
   background-color: #DE7171;
 }
 
-#eventList DIV {
+.event {
   line-height: 3em;
   height: 3em;
   cursor: pointer;

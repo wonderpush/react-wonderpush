@@ -6,24 +6,19 @@ export default function withWonderPush (OriginalComponent) {
     constructor(props){
       super(props)
       this.state = { 
-        wp: null,
-        ready: false
+        wp: 'not ready',
       }
     }
 
     componentDidMount(){
-      WonderPush.ready( wp => {
-        this.setState({
-          wp,
-          ready: true
-        })
-      })
+      WonderPush.ready( wp => { this.setState({wp}) })
     }
 
     render(){
-      return this.state.ready ? 
-        <OriginalComponent wp={this.state.wp} {...this.props}/> : 
-        null
+      return this.state.wp == 'not ready' ? 
+        null :
+        <OriginalComponent wp={this.state.wp} {...this.props}/> 
+        
     }
   }
   return WonderpushHOC;

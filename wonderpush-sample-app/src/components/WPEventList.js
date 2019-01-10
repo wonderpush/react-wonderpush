@@ -2,7 +2,10 @@ import React,{Component} from 'react';
 import {withWonderPush} from 'react-wonderpush'
 
 export class WPEventList extends Component {
+
   render(){
+    console.log(this.props.wp)
+
     return(
       <div>
         <div id="eventList">

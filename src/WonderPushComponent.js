@@ -5,8 +5,6 @@ export default class Wonderpush extends Component {
   constructor(props){
     super(props);
 
-    console.log('WonderPush INITIALIZATION');
-
     WonderPush.init({
       webKey: this.props.webKey,
       applicationName:        this.props.applicationName,

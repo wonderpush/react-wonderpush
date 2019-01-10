@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import WPEventList from './components/WPEventList';
+import EventList from './components/EventList';
 import SwitchButton from './components/SwitchButton';
 import './App.css';
-import {WonderPush, withWonderPush} from 'react-wonderpush';
+import {WonderPush} from 'react-wonderpush';
 
 
 /*WonderPush.init({
@@ -49,7 +49,7 @@ class App extends Component {
           <div className="App">
             <h1>Connecting to wonderpush</h1>
             <SwitchButton/>
-            <WPEventList/>
+            <EventList/>
           </div>
         </WonderPush>
     );

@@ -11,6 +11,9 @@ import {WonderPush, withWonderPush} from 'react-wonderpush';
   notificationDefaultUrl: 'https://www.wonderpush.com/demo/',
   notificationIcon:       '../img/image.png'
 });*/
+
+
+console.log(new SwitchButton());
 class App extends Component {
   constructor(){
     super();

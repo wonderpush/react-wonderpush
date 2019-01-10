@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {withWonderPush} from 'react-wonderpush'
 
 export class WPEventList extends Component {
   render(){
@@ -19,3 +20,4 @@ export class WPEventList extends Component {
     )
   }
 }
+export default withWonderPush(WPEventList)

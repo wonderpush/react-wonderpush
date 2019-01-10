@@ -13,7 +13,7 @@ import {WonderPush, withWonderPush} from 'react-wonderpush';
 });*/
 
 
-console.log(new SwitchButton());
+// console.log(new SwitchButton());
 class App extends Component {
   constructor(){
     super();
@@ -56,4 +56,4 @@ class App extends Component {
   }
 }
 
-export default withWonderPush(App)
+export default App

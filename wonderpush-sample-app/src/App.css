@@ -25,13 +25,13 @@ p{
 .purchase:hover{
   background-color: #555454;
 }
-.eiffelTower:hover{
+.nearEiffelTower:hover{
   background-color: #65CEAB;
 }
-.Louvre:hover{
+.nearLouvre:hover{
   background-color: #43957A;
 }
-.inactivity:hover{
+.inactiveUser:hover{
   background-color: #C26868;
 }
 

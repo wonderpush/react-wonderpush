@@ -8,7 +8,7 @@ export class EventToTrack extends Component {
   }
 
   fireEvent(e){
-    this.props.wp.trackEvent(this.props.event)
+    this.props.wonderPush.trackEvent(this.props.event)
   }
 
   render(){
@@ -24,4 +24,4 @@ export class EventToTrack extends Component {
   }
 }
 
-export default withWonderPush(EventToTrack)
+export default withWonderPush(EventToTrack, {waitWonderPushReady: true})

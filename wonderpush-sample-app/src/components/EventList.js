@@ -8,6 +8,9 @@ const lookupEvents = {
   like: 'Like',
   addToCart: 'Add To Cart',
   purchase: 'Purchase',
+  nearEiffelTower: 'Near Eiffel Tower',
+  nearLouvre: 'Near Louvre',
+  inactiveUser: 'Inactive User'
 }
 
 export default function EventList(){

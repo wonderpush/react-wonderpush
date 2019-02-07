@@ -16,7 +16,9 @@ yarn add react-wonderpush
 
 # NPM
 npm i react-wonderpush
+
 ```
+
 
 ### 2- In your application
 

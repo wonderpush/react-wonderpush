@@ -44,7 +44,6 @@
     "react-calendar": "^2.17.5",
     "react-dev-utils": "^6.1.1",
     "react-dom": "^16.6.3",
-    "react-wonderpush": "^1.0.1",
     "reactstrap": "^6.5.0",
     "resolve": "1.8.1",
     "sass-loader": "7.1.0",
@@ -59,7 +58,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "run-demo": "bash scripts/run-demo.sh"
   },
   "eslintConfig": {
     "extends": "react-app"

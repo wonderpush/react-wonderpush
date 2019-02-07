@@ -4,8 +4,7 @@
   "description": "React based implementation for WonderPush Web SDK − Advanced push notification service for iOS and Android applications and Websites. High volume and fast delivery. Start for free.",
   "main": "./dist/index.js",
   "scripts": {
-    "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",

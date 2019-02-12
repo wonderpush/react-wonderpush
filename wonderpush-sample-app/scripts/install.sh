@@ -14,13 +14,13 @@ if [ ! -d "$LIBRARY_MODULES" ]; then
   npm install
 fi
 
-if [ ! -d "$DIST_MODULE" ]; then
+if [ ! -d "$LIBRARY_DIST" ]; then
   echo "Build the library"
   cd "$LIBRARY_PATH"
   npm run build
 fi
 
-if [ ! -d "$APP_MODULE" ]; then
+if [ ! -d "$APP_MODULES" ]; then
   echo "Install the app node_modules"
   cd "$APP_PATH"
   npm install
@@ -28,5 +28,3 @@ if [ ! -d "$APP_MODULE" ]; then
 fi
 
 cd "$APP_PATH"
-npm run start
-

@@ -24,51 +24,74 @@ npm i react-wonderpush
 
 ```javascript
 import WonderPush from 'react-wonderpush';
-WonderPush.init({
-  webKey: 'YOUR-WEBKEY-HERE',
-});
+<WonderPush options = {{
+  webKey: "a6a00ccf60ffee04cb201cead4304fc4db8fa8e0a2823a77466e8c8ebeed4e25",
+  applicationName: "React WonderPush Demo",
+  notificationDefaultUrl: "https://www.wonderpush.com/demo/",
+  notificationIcon: "../img/image.png"
+}}>
+  <div className="App">
+    Your components here ...
+  </div>
+</WonderPush>
 ```
-### 3- In your components
-This example shows how to create a link to subscribe to WonderPush notifications. The link only appears for users that haven't subscribed already, and disappears once subscription is complete.
-```javascript
-import WonderPush from 'react-wonderpush';
+Options available for wonderpush.init:
+https://wonderpush.github.io/wonderpush-javascript-sdk/latest/WonderPush.html#.InitOptions
 
-class NotificationSignupComponent extends Component {
-  constructor(props) {
-    this.state = {
-      wonderPushReady: false,
-      userIsSignedUpWithWonderPush: false,
-    };
-    // Call WonderPush to find out if the user is subscribed.
-    WonderPush.ready((WonderPushSDK) => {
-      this.setState({
-        userIsSignedUpWithWonderPush: WonderPushSDK.getNotificationEnabled(),
-        wonderPushReady: true,
-      });
-    });
+
+### 3- In your components
+
+Integrate a wonderpush subscription:
+
+```javascript
+import React,{Component} from 'react';
+
+const SwitchButton = () => (
+    <div className="switch-container">
+      <div id="wonderpush-subscription-switch" data-on="YES" data-off="NO"></div>
+    </div>
+  )
+
+export default SwitchButton
+```
+
+Create a component who need wonderpush:
+
+```javascript
+import React, {Component} from 'react'
+import {withWonderPush} from 'react-wonderpush'
+
+export class EventToTrack extends Component {
+  constructor(props){
+    super(props)
+    this.fireEvent = this.fireEvent.bind(this)
   }
-  render() {
-    const { wonderPushReady, userIsSignedUpWithWonderPush } = this.state;
-    // Do not display anything when user is already subscribed or while we're waiting to find out
-    if (!wonderPushReady || userIsSignedUpWithWonderPush) return null;
-    // Handle clicks
-    const onClick = (event) => {
-      if (event) event.preventDefault();
-      // Subscribe user to push notifications
-      WonderPush.ready((WonderPushSDK) => {
-        WonderPushSDK.setNotificationEnabled(true, event).then(() => {
-          // Update our state once the subscription is successful
-          this.setState({ userIsSignedUpWithWonderPush: true })
-        });
-      });
-    };
-    return <a onClick={onClick} href="#">Subscribe to push notifications</a>;
+
+  fireEvent(e){
+    this.props.wonderPush.trackEvent("myEvent")
+  }
+
+  render(){
+    return (
+      <div 
+        className={"event myEvent"} 
+        onClick={this.fireEvent} 
+      > 
+        Click on this div will track event name myEvent
+      </div>
+    )
   }
 }
+
+export default withWonderPush(EventToTrack, {waitWonderPushReady: true})
 ```
 
+WithWonderPush take two arguments:
+  - Component
+  - options
 
-
+Options available: 
+  - waitWonderPushReady: boolean (default : false)
 
 ## Sample app
 To help you with your implementaiton we provided a sample application. to run it
@@ -84,6 +107,8 @@ then go to [http://localhost:3000](http://localhost:3000)
 As React itself, this module is released under the permissive [MIT License](http://revolunet.mit-license.org). Your contributions are always welcome.
 
 ## Development
+
+Start the wonderpush-sample-app with npm start or yarn start will install and build library and install sample-app node_modules if they not exists.
 
 After forking you will need to run the following from a command line to get your environment setup:
 

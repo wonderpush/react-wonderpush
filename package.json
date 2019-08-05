@@ -1,7 +1,7 @@
 {
   "name": "react-wonderpush",
   "version": "1.0.2",
-  "description": "React based implementation for WonderPush Web SDK − Advanced push notification service for iOS and Android applications and Websites. High volume and fast delivery. Start for free.",
+  "description": "Mobile push notification delivery with the WonderPush service. The WonderPush Cordova SDK is compatible with iOS and Android.",
   "main": "./dist/index.js",
   "scripts": {
     "build": "webpack",

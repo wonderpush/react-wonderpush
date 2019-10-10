@@ -1,11 +1,10 @@
 {
   "name": "react-wonderpush",
-  "version": "1.0.2",
-  "description": "Mobile push notification delivery with the WonderPush service. The WonderPush Cordova SDK is compatible with iOS and Android.",
+  "version": "1.0.6",
+  "description": "React based implementation for WonderPush Web SDK − Advanced push notification service for iOS and Android applications and Websites. High volume and fast delivery. Start for free.",
   "main": "./dist/index.js",
   "scripts": {
-    "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -18,6 +17,9 @@
     "notifications"
   ],
   "author": "Boubacar Drame, Lenoir Jérémie",
+  "contributors": [
+    "Julien Grach"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/wonderpush/react-wonderpush/issues"

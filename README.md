@@ -1,100 +1,64 @@
-# react-wonderpush
+<p align="center"><img src="https://cdn.by.wonderpush.com/assets/images/logo/logo-type-512x85.png"></p>
 
-This service lets you integrate Wonderpush in your React applications easily.
-- [Official website](https://wonderpush.com)
+### WonderPush React SDK
+
+Website push notification delivery with the WonderPush service.
+
+[WonderPush](https://www.wonderpush.com) is the most effective way to retain your users and grow your audience while remaining fully GDPR compliant.
+
+With this plugin, integrate push notification in minutes in your website.
+
+You can automate notifications based on user behavior, create user segments, and customize the subscription process for visitors.
+
+WonderPush offers a 14-day free trial.
+After the trial period, you can benefit from unlimited push notifications and all the features from 1 euro per month. There are no limits on the number of push notifications you can send.
+
+Our features include rich formats, automation, realtime analytics, powerful segmentation... All our features are included and you benefit from evolutions without ever having to pay more.
+
+## Company
+[WonderPush](https://www.wonderpush.com) is trusted by over 5,000 developers in Europe and Worldwide.
+
+WonderPush never shares your data with third parties. Your data is safe with us and we protect the privacy of your users as if they were ours. Data collected by our SDKs is fully documented and hosted in Europe.
+
+We provide ready-made tools to collect and manage user consent, and let users download or delete all their data.
 
 ## Features
+* **Automatic notifications** - Automatically send personalized notifications to users that match certain criteria
+* **Segmentation** - Send notifications to specific subscribers based on language, tags, events or properties.
+* **Real-time Analytics** - See delivery metrics in real time, and watch them as they convert into visits.
+* **Advanced dashboard** - Discover the power of push notification automation. Manage segments and campaigns. Invite staff to join your project.
 
-## Installation and Quick Start
+## Installation
 
-### 1- Installation:
-You can install the module from a package manager of your choice directly from the command line
+See our [React Quickstart Guide](https://docs.wonderpush.com/docs/web-push-notifications-react).
 
-```sh
-# Yarn
-yarn add react-wonderpush
+## Reference
 
-# NPM
-npm i react-wonderpush
-```
+Check out the [**API reference**](https://docs.wonderpush.com/docs/website-sdk-reference) for a list of available methods.
 
+## Migrate from OneSignal plugin and others
+If you need to be GDPR compliant and you already use a push notification plugin, migrating to WonderPush is easy: all you have to do is add the WonderPush plugin to your app and disable the other plugin.
 
-### 2- In your application
-
-```javascript
-import WonderPush from 'react-wonderpush';
-<WonderPush options = {{
-  webKey: "a6a00ccf60ffee04cb201cead4304fc4db8fa8e0a2823a77466e8c8ebeed4e25",
-  applicationName: "React WonderPush Demo",
-  notificationDefaultUrl: "https://www.wonderpush.com/demo/",
-  notificationIcon: "../img/image.png"
-}}>
-  <div className="App">
-    Your components here ...
-  </div>
-</WonderPush>
-```
-
-Initialization options are described here: https://docs.wonderpush.com/docs/website-sdk-reference#section-init
+Once you have the WonderPush plugin on your app, users who install the latest version of your app and have already granted push notification permission will automatically appear among your subscribers without having to subscribe again.
 
 
-### 3- In your components
+## Change log and releases
 
-Integrate a WonderPush subscription:
+See the [**releases page**](https://github.com/wonderpush/react-wonderpush/releases) on GitHub.
 
-```javascript
-import React,{Component} from 'react';
+Follow our [**announcements**](https://discuss.wonderpush.com/c/announcements) on our community forum.
 
-const SwitchButton = () => (
-    <div className="switch-container">
-      <div id="wonderpush-subscription-switch" data-on="YES" data-off="NO"></div>
-    </div>
-  )
+## Support
 
-export default SwitchButton
-```
+Contact support using the **live chat** on your [dashboard](https://dashboard.wonderpush.com/).
 
-Create a component who needs WonderPush:
+Ask for help on our [**community forum**](https://discuss.wonderpush.com/c/support).
 
-```javascript
-import React, {Component} from 'react'
-import {withWonderPush} from 'react-wonderpush'
-
-export class EventToTrack extends Component {
-  constructor(props){
-    super(props)
-    this.fireEvent = this.fireEvent.bind(this)
-  }
-
-  fireEvent(e){
-    this.props.wonderPush.trackEvent("myEvent")
-  }
-
-  render(){
-    return (
-      <div 
-        className={"event myEvent"} 
-        onClick={this.fireEvent} 
-      > 
-        Click on this div will track event name myEvent
-      </div>
-    )
-  }
-}
-
-export default withWonderPush(EventToTrack, {waitWonderPushReady: true})
-```
-
-`withWonderPush` takes two arguments:
-  - `Component`
-  - `options`
-
-Options available: 
-  - `waitWonderPushReady`: boolean (default: `false`)
+Report a bug, file a feature request or send a pull request in the [**issue tracker**](https://github.com/wonderpush/react-wonderpush/issues).
 
 ## Sample app
 
-To help you with your implementation we provided a sample application. Run it using:
+To help you with your implementation we provide a sample application. Run it using:
 
 ```bash
 cd wonderpush-sample-app

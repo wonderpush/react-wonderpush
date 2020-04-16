@@ -102,8 +102,3 @@ yarn start
 ```
 
 then go to http://localhost:3000
-
-
-## License
-
-As React itself, this module is released under the permissive [MIT License](http://revolunet.mit-license.org). Your contributions are always welcome.

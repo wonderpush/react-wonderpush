@@ -16,7 +16,6 @@ yarn add react-wonderpush
 
 # NPM
 npm i react-wonderpush
-
 ```
 
 
@@ -35,13 +34,13 @@ import WonderPush from 'react-wonderpush';
   </div>
 </WonderPush>
 ```
-Options available for wonderpush.init:
-https://wonderpush.github.io/wonderpush-javascript-sdk/latest/WonderPush.html#.InitOptions
+
+Initialization options are described here: https://docs.wonderpush.com/docs/website-sdk-reference#section-init
 
 
 ### 3- In your components
 
-Integrate a wonderpush subscription:
+Integrate a WonderPush subscription:
 
 ```javascript
 import React,{Component} from 'react';
@@ -55,7 +54,7 @@ const SwitchButton = () => (
 export default SwitchButton
 ```
 
-Create a component who need wonderpush:
+Create a component who needs WonderPush:
 
 ```javascript
 import React, {Component} from 'react'
@@ -86,34 +85,25 @@ export class EventToTrack extends Component {
 export default withWonderPush(EventToTrack, {waitWonderPushReady: true})
 ```
 
-WithWonderPush take two arguments:
-  - Component
-  - options
+`withWonderPush` takes two arguments:
+  - `Component`
+  - `options`
 
 Options available: 
-  - waitWonderPushReady: boolean (default : false)
+  - `waitWonderPushReady`: boolean (default: `false`)
 
 ## Sample app
-To help you with your implementaiton we provided a sample application. to run it
+
+To help you with your implementation we provided a sample application. Run it using:
+
 ```bash
 cd wonderpush-sample-app
 yarn start
 ```
-then go to [http://localhost:3000](http://localhost:3000)
+
+then go to http://localhost:3000
 
 
 ## License
 
 As React itself, this module is released under the permissive [MIT License](http://revolunet.mit-license.org). Your contributions are always welcome.
-
-## Development
-
-Start the wonderpush-sample-app with npm start or yarn start will install and build library and install sample-app node_modules if they not exists.
-
-After forking you will need to run the following from a command line to get your environment setup:
-
-1. ```yarn install```
-
-After install you have the following commands available to you from a command line:
-
-1. ```gulp```

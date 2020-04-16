@@ -16,8 +16,10 @@
     "wrapper",
     "notifications"
   ],
-  "author": "Boubacar Drame, Lenoir Jérémie",
+  "author": "WonderPush",
   "contributors": [
+    "Boubacar Drame",
+    "Lenoir Jérémie",
     "Julien Grach"
   ],
   "license": "ISC",

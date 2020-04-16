@@ -11,7 +11,7 @@ export default function withWonderPush (OriginalComponent, options = {}) {
       }
     }
     componentDidMount(){
-      WonderPush.ready( wp => { this.setState({wp, ready: true}) })
+      WonderPush.push( wp => { this.setState({wp, ready: true}) })
     }
     render(){
       const  waitWonderPushReady = options && options.waitWonderPushReady

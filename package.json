@@ -1,6 +1,6 @@
 {
   "name": "react-wonderpush",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "React based implementation for WonderPush Web SDK − Advanced push notification service for iOS and Android applications and Websites. High volume and fast delivery. Start for free.",
   "main": "./dist/index.js",
   "scripts": {

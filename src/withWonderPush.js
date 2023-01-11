@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import WonderPush from './WonderPush';
 
 export default function withWonderPush (OriginalComponent, options = {}) {
-  class WonderpushHOC extends Component {
+  class WonderPushHOC extends Component {
     constructor(props){
       super(props)
       this.state = { 
@@ -20,5 +20,5 @@ export default function withWonderPush (OriginalComponent, options = {}) {
         <OriginalComponent wonderPush={this.state.wp} {...this.props}/> 
     }
   }
-  return WonderpushHOC;
+  return WonderPushHOC;
 }

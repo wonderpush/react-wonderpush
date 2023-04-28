@@ -1,5 +1,5 @@
 
-<p align="center"><img style="width:33%; background-color:white;" src="https://kybernetes.pl/wp-content/uploads/2022/10/Logo-Kybernetes-biele.png"></p>
+<p align="left"><img style="width:33%; background-color:white;" src="https://kybernetes.pl/wp-content/uploads/2022/10/Logo-Kybernetes-biele.png"></p>
 
 ### WonderPush Svelte SDK
 
